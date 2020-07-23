@@ -57,6 +57,8 @@ for item in range(1, num_questions + 1):
 
     user_ans = int(input(question))
 
+    # Compares users answer with the correct answer
+
     if user_ans != answer:
         print()
         print("Sorry, that is the wrong answer. The correct answer was {}".format(answer))
