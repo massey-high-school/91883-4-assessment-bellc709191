@@ -2,9 +2,11 @@ import random
 
 # number checking function
 
+
 def intcheck(question, low=None, high=None):
 
     # sets up error messages
+
     if low is not None and high is not None:
             error = "Please enter an integer between {} and {} " \
                     "(inclusive)".format(low, high)
@@ -46,12 +48,22 @@ num_questions = intcheck("Questions: ", 1)
 low = intcheck("Low Number: ")
 high = intcheck("High Number: ", low + 1)
 
-for item in range(1,num_questions):
+for item in range(1, num_questions + 1):
     number1 = random.randint(low, high)
     number2 = random.randint(low, high)
 
     question = "{} + {} = ".format(number1, number2)
     answer = number1 + number2
 
-    # generate question
-    print(question, answer)
+    user_ans = int(input(question))
+
+    if user_ans != answer:
+        print()
+        print("Sorry, that is the wrong answer. The correct answer was {}".format(answer))
+        print()
+
+    else:
+        print()
+        print("Well Done, You got it right!")
+        print()
+
